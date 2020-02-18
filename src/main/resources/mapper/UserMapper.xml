@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stq.temperaturecollectionsystem.mapper.UserMapper">
+
+    <select id="queryUserList" resultType="User">
+    select * from user
+    </select>
+
+    <insert id="addUser" parameterType="User">
+    insert into user (U_NAME,U_HOME) values (#{U_NAME},#{U_HOME})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+    update user set U_NAME=#{uname},U_HOME=#{uhome}where U_ID=#{uid}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+    delete from user where U_ID=#{U_ID}
+    </delete>
+</mapper>

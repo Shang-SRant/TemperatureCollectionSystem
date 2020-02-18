@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stq.temperaturecollectionsystem.mapper.TempMapper">
+
+    <select id="queryTempList" resultType="Temp">
+    select * from temperature
+    </select>
+
+    <insert id="addTemp" parameterType="Temp">
+    insert into temperature (U_ID,T_TEMPERATURE) values (#{U_ID},#{T_TEMPERATURE})
+    </insert>
+
+    <delete id="deleteTemp" parameterType="int">
+    delete from temperature where T_ID=#{T_ID}
+    </delete>
+</mapper>

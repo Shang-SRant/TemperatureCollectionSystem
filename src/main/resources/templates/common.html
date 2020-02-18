@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>物联网社区温度采集系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap-responsive.min.css}" rel="stylesheet">
+    <link th:href="@{/css/site.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航栏 -->
+    <div class="navbar" th:fragment="topbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="index.html">物联网社区温度采集系统</a>
+                <div class="nav-collapse">
+                    <form class="navbar-search pull-left" action="">
+                        <label>
+                            <input type="text" class="search-query span2" placeholder="搜索..."/>
+                        </label>
+                    </form>
+                    <ul class="nav pull-right">
+                        <li><a href="#">欢迎您，管理员！</a></li>
+                        <li><a href="login.html">登出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <!-- 侧边导航栏 -->
+        <div class="span3" th:fragment="sidebar">
+            <div class="well" style="padding: 8px 0;">
+                <ul class="nav nav-list">
+                    <li class="nav-header">导航栏</li>
+                    <li class="divider"></li>
+                    <li th:class="${active=='index.html'?'active':' '}">
+                        <a href="index.html"><i class="icon-home"></i>首页</a>
+                    </li>
+                    <li th:class="${active=='user.html'?'active':' '}">
+                        <a href="user.html"><i class="icon-user"></i>用户管理</a>
+                    </li>
+                    <li th:class="${active=='cogo.html'?'active':' '}">
+                        <a href="cogo.html"><i class="icon-star"></i>出入记录</a>
+                    </li>
+                    <li th:class="${active=='temp.html'?'active':' '}">
+                        <a href="temp.html"><i class="icon-fire"></i>温度检测</a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script th:src="@{js/jquery.min.js}"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+<script th:src="@{js/site.js}"></script>
+
+</body>
+</html>

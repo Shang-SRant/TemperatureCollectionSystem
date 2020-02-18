@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stq.temperaturecollectionsystem.mapper.CogoMapper">
+
+    <select id="queryCogoList" resultType="Cogo">
+    select * from access
+    </select>
+
+    <insert id="addCogo" parameterType="Cogo">
+    insert into access (U_ID,A_WAY) values (#{U_ID},#{A_WAY})
+    </insert>
+
+    <delete id="deleteCogo" parameterType="int">
+    delete from access where A_ID=#{A_ID}
+    </delete>
+</mapper>

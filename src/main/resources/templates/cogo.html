@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>物联网社区温度采集系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap-responsive.min.css}" rel="stylesheet">
+    <link th:href="@{/css/site.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航栏 -->
+    <div th:insert="~{common::topbar}"></div>
+
+
+    <div class="row">
+        <!-- 侧边导航栏 -->
+        <div th:insert="~{common::sidebar(active='cogo.html')}"></div>
+
+        <div class="span9">
+            <h1>出入记录</h1>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>记录编号</th>
+                    <th>用户编号</th>
+                    <th>进/入</th>
+                    <th>记录时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="cogo:${cogolist}">
+                    <td th:text="${cogo.getA_ID()}"></td>
+                    <td th:text="${cogo.getU_ID()}"></td>
+                    <td th:text="${cogo.getA_WAY()}"></td>
+                    <td th:text="${cogo.getA_DATETIME()}"></td>
+                    <td>
+                        <a  th:href="@{/deleteCogo/} + ${cogo.getA_ID()}" class="view-link">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <a class="toggle-link" href="#new-project"><i class="icon-plus"></i>新增出入一条记录</a>
+
+            <form action="/addCogo" method="post" id="new-project" class="form-horizontal hidden">
+                <fieldset>
+                    <legend>添加出入记录</legend>
+                    <div class="control-group">
+                        <label class="control-label" for="input01">用户编号</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="input01" name="U_ID"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="select01">进入方式</label>
+                        <div class="controls">
+                            <select id="select01" name="A_WAY">
+                                <option selected>选择进/出方式</option>
+                                <option value="出">出</option>
+                                <option value="入">入</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">添加</button>
+                        <button class="btn">取消</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{js/jquery.min.js}"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+<script th:src="@{js/site.js}"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

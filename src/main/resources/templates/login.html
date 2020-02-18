@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>物联网社区温度采集系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap-responsive.min.css}" rel="stylesheet">
+    <link th:href="@{/css/site.css}" rel="stylesheet">
+</head>
+<body>
+<div id="login-page" class="container">
+    <h1>登录</h1>
+    <form id="login-form" class="well" action="index.html">
+        <label>
+            <input type="text" class="span2" placeholder="用户名"/>
+        </label><br/>
+        <label>
+            <input type="password" class="span2" placeholder="密码"/>
+        </label><br/>
+        <label class="checkbox"> <input type="checkbox"/>记住我</label>
+        <button type="submit" class="btn btn-primary">登录</button>
+        <button type="submit" class="btn">忘记密码</button>
+    </form>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
