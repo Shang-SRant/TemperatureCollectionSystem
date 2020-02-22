@@ -5,14 +5,7 @@
 <mapper namespace="com.stq.temperaturecollectionsystem.mapper.CogoMapper">
 
     <select id="queryCogoList" resultType="Cogo">
-    select * from access
+    SELECT `user`.U_ID,`user`.U_NAME,`user`.U_SEX,`user`.U_AGE,`user`.U_IDCARD,`user`.U_HOME,temperature.A_WAY,temperature.T_TEMPERATURE,temperature.T_DATETIME FROM `user`,temperature WHERE `user`.U_ID = temperature.U_ID;
     </select>
 
-    <insert id="addCogo" parameterType="Cogo">
-    insert into access (U_ID,A_WAY) values (#{U_ID},#{A_WAY})
-    </insert>
-
-    <delete id="deleteCogo" parameterType="int">
-    delete from access where A_ID=#{A_ID}
-    </delete>
 </mapper>

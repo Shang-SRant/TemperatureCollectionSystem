@@ -2,7 +2,7 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>物联网社区温度采集系统</title>
+    <title>西安培华学院物联网体温检测站</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/css/bootstrap-responsive.min.css}" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div class="navbar" th:fragment="topbar">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="index.html">物联网社区温度采集系统</a>
+                <a class="brand" href="index.html">西安培华学院物联网体温检测站</a>
                 <div class="nav-collapse">
                     <form class="navbar-search pull-left" action="">
                         <label>
@@ -45,11 +45,11 @@
                     <li th:class="${active=='user.html'?'active':' '}">
                         <a href="user.html"><i class="icon-user"></i>用户管理</a>
                     </li>
-                    <li th:class="${active=='cogo.html'?'active':' '}">
-                        <a href="cogo.html"><i class="icon-star"></i>出入记录</a>
-                    </li>
                     <li th:class="${active=='temp.html'?'active':' '}">
                         <a href="temp.html"><i class="icon-fire"></i>温度检测</a>
+                    </li>
+                    <li th:class="${active=='cogo.html'?'active':' '}">
+                        <a href="cogo.html"><i class="icon-star"></i>出入记录</a>
                     </li>
                     <li class="divider"></li>
                 </ul>

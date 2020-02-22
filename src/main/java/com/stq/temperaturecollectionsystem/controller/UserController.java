@@ -4,13 +4,16 @@ package com.stq.temperaturecollectionsystem.controller;
 import com.stq.temperaturecollectionsystem.mapper.UserMapper;
 import com.stq.temperaturecollectionsystem.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -28,13 +31,12 @@ public class UserController {
 
     @PostMapping("/addUser")
     public String addUser(User user) {
-        userMapper.addUser(user);
+            userMapper.addUser(user);
         return "redirect:/user";
     }
 
     @GetMapping("/deleteUser/{uid}")
     public String deleteUser(@PathVariable("uid") int uid) {
-        System.out.println(uid);
         userMapper.deleteUser(uid);
         return "redirect:/user";
     }

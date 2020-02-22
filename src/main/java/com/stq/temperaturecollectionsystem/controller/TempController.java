@@ -1,8 +1,9 @@
 package com.stq.temperaturecollectionsystem.controller;
 
-
 import com.stq.temperaturecollectionsystem.mapper.TempMapper;
+import com.stq.temperaturecollectionsystem.mapper.UserMapper;
 import com.stq.temperaturecollectionsystem.pojo.Temp;
+import com.stq.temperaturecollectionsystem.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +38,4 @@ public class TempController {
         tempMapper.deleteTemp(tid);
         return "redirect:/temp";
     }
-
-
 }

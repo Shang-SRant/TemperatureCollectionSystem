@@ -5,11 +5,11 @@
 <mapper namespace="com.stq.temperaturecollectionsystem.mapper.TempMapper">
 
     <select id="queryTempList" resultType="Temp">
-    select * from temperature
+    select * from temperature,user where temperature.U_ID = `user`.U_ID
     </select>
 
     <insert id="addTemp" parameterType="Temp">
-    insert into temperature (U_ID,T_TEMPERATURE) values (#{U_ID},#{T_TEMPERATURE})
+    insert into temperature (U_ID,A_WAY,T_TEMPERATURE) values (#{U_ID},#{A_WAY},#{T_TEMPERATURE})
     </insert>
 
     <delete id="deleteTemp" parameterType="int">

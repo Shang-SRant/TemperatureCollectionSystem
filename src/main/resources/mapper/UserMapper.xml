@@ -9,7 +9,7 @@
     </select>
 
     <insert id="addUser" parameterType="User">
-    insert into user (U_NAME,U_HOME) values (#{U_NAME},#{U_HOME})
+    insert into user (U_NAME,U_SEX,U_AGE,U_IDCARD,U_HOME) values (#{U_NAME},#{U_SEX},#{U_AGE},#{U_IDCARD},#{U_HOME})
     </insert>
 
     <update id="updateUser" parameterType="User">

@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <title>物联网社区温度采集系统</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link th:href="@{../css/bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{../css/bootstrap-responsive.min.css}" rel="stylesheet">
-    <link th:href="@{../css/site.css}" rel="stylesheet">
-</head>
-<body>
-<div class="container">
+    <html lang="zh" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>西安培华学院物联网体温检测站</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{../css/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{../css/bootstrap-responsive.min.css}" rel="stylesheet">
+        <link th:href="@{../css/site.css}" rel="stylesheet">
+    </head>
+    <body>
+    <div class="container">
 
-    <!-- 顶部导航栏 -->
-    <div th:insert="~{common::topbar}"></div>
+        <!-- 顶部导航栏 -->
+        <div th:insert="~{common::topbar}"></div>
 
-    <div class="row">
-        <!-- 侧边导航栏 -->
-        <div th:insert="common::sidebar(active='index.html')"></div>
+        <div class="row">
+            <!-- 侧边导航栏 -->
+            <div th:insert="common::sidebar(active='index.html')"></div>
 
-        <div class="span9">
-            <div class="hero-unit">
-                <h1>欢迎进入</h1>
-                <p>物联网社区温度采集系统</p>
+            <div class="span9">
+                <div class="hero-unit">
+                    <h3 align="center">西安培华学院</h3>
+                    <p align="center">西安培华学院物联网体温检测站</p>
+                </div>
             </div>
         </div>
-    </div>
 
 </div>
 
